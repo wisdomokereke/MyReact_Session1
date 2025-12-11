@@ -1,13 +1,12 @@
-import Message from './components/Message';
-import Name from './components/Name';
-import ListGroup from './components/ListGroup';
+import WelcomeMessage from './components/WelcomeMessage.tsx';
+import AboutReact from './components/AboutReact.tsx';
+// import ListGroup from './components/ListGroup';
 
 function App() {
   return(
     <>
-    <Message />
-    <ListGroup />
-    <Name />
+    <WelcomeMessage />
+    <AboutReact /> 
     </>
   );
 }

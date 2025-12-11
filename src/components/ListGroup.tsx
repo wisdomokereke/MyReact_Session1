@@ -48,7 +48,7 @@ function ListGroup(){
             {items.length === 0 && <p>No items found</p> }
             {items.length > 0 && <p>Showing {items.length} items</p> }
             <ol className='list-group'>
-                {items.map((item) => (<li key={item.id}>My city is {item.city}</li>))}
+                {items.map(item => (<li key={item.id}>My city is {item.city}</li>))}
             </ol>
             <ul>
                 {products.map((product, index) => (<li key={index}>{product}</li>))}
