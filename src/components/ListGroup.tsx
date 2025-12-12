@@ -1,60 +1,31 @@
-function ListGroup(){
 
-    let items = [
-        { 
-            city: 'Lagos', id: 0 
-        },
-        { 
-            city: 'Abuja', id: 1 
-        },
-        { 
-            city: 'Kano', id: 2 
-        },
-        { 
-            city: 'Ibadan', id: 3 
-        },
-        {
-            city: 'Enugu', id: 4
-        },
-        {
-            city: 'Anambra', id: 5
-        }
-    ]
+function ListGroup() {                     // Define a React functional component called ListGroup
 
-    // items = [
-    //     {city: 'lagos', id: 0}
-    // ]; // Simulating no items scenario
+  const topics = [                         // Create an array named 'topics'
+    "What is React",                       // Topic 1
+    "Folder structure in React",           // Topic 2
+    "JSX",                                 // Topic 3
+    "Rendering Lists",                     // Topic 4
+    "Conditional Rendering",               // Topic 5
+    "",                                    // Empty item we don't want
+    "",                                    // Another empty item
+  ];
 
-    
-    // if (items.length === 0){
-    //     return <p>No items found</p>
-    // }
+  const validTopics = topics.filter(       // Filter the topics array to remove empty values
+    topic => topic.trim() !== ""           // Keep a topic only if, after trimming spaces, it's not empty
+  );
 
-    const products = [
-        'Laptop',
-        'Phone',
-        'Tablet',
-        'Monitor'
-    ]
-  
-    //  jsx conditional rendering using && operator
+  if (validTopics.length === 0) return null; // If all topics were empty and none remain, render nothing
 
-
-    return (
-        <>
-            <h1>List Group Component</h1>
-            {/* conditional rendering : ctrl + backslash */}
-            
-            {items.length === 0 && <p>No items found</p> }
-            {items.length > 0 && <p>Showing {items.length} items</p> }
-            <ol className='list-group'>
-                {items.map(item => (<li key={item.id}>My city is {item.city}</li>))}
-            </ol>
-            <ul>
-                {products.map((product, index) => (<li key={index}>{product}</li>))}
-            </ul>
-        </>
-    )
+  return (                                 // Return the JSX to be displayed on the screen
+    <>                                     
+      <ul>                                
+        {validTopics.map((topic, index) => (  // Loop through validTopics using map to generate list items
+          <li key={index}>{topic}</li>        // Render each topic inside an <li>, using index as key
+        ))}                               
+      </ul>                                
+    </>                                    // End of the React fragment
+  );
 }
 
-export default ListGroup;
+export default ListGroup;                  // Export the component so it can be used in other files

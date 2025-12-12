@@ -24,4 +24,4 @@ function AboutReact() {
     )
 }
 
-export default AboutReact
+export default AboutReact;
